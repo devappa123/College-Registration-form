@@ -1,0 +1,20 @@
+# Supabase Configuration (contains sensitive keys)
+config.php
+
+# PHP
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
