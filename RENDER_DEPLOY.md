@@ -44,10 +44,10 @@ git push -u origin main
 3. **Configure Service**
    ```
    Name: student-admission-portal (or your choice)
-   Environment: PHP
-   Build Command: bash render-build.sh
-   Start Command: php -S 0.0.0.0:$PORT
+   Environment: Docker
    ```
+   
+   Render will auto-detect the Dockerfile and use it!
 
 4. **Click "Create Web Service"**
    - Render will auto-deploy

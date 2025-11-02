@@ -57,9 +57,8 @@ git push -u origin main
 3. New + → Web Service
 4. Connect your repo
 5. Configure:
-   - **Environment**: PHP
-   - **Build Command**: `bash render-build.sh`
-   - **Start Command**: `php -S 0.0.0.0:$PORT`
+   - **Environment**: Docker
+   - Render will auto-detect the Dockerfile!
 6. Click "Create Web Service"
 
 ### 7. Wait for Deployment

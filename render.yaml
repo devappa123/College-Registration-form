@@ -1,7 +1,6 @@
 services:
   - type: web
     name: student-admission-portal
-    env: php
-    buildCommand: bash render-build.sh
-    startCommand: php -S 0.0.0.0:$PORT
-    healthCheckPath: /index.php
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
