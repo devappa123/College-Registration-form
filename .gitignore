@@ -1,8 +1,7 @@
-# Supabase Configuration (contains sensitive keys)
-config.php
-
-# PHP
+# Temporary local files
 *.log
+*.tmp
+*.bak
 
 # OS Files
 .DS_Store
@@ -15,6 +14,7 @@ Thumbs.db
 *.swo
 *~
 
-# Temporary files
-*.tmp
-*.bak
+# Test files
+test_connection.php
+submit_debug.php
+config_no_curl.php

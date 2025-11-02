@@ -1,5 +1,5 @@
 /* ========================================
-   CSS Variables for Theme Support (Revised)
+   CSS Variables for Theme Support
    ======================================== */
 :root {
     --primary-color: #2563eb;
@@ -10,37 +10,27 @@
     --text-primary: #1e293b;
     --text-secondary: #64748b;
     --bg-primary: #ffffff;
-    --bg-secondary: #f0f4f8; /* Slightly off-white for depth */
+    --bg-secondary: #f8fafc;
     --bg-card: #ffffff;
     --border-color: #e2e8f0;
-
-    /* Modernized Shadows using HSLA for consistent look across backgrounds */
-    --shadow-color-light: 0 0% 0%;
-    --shadow-sm: 0 1px 3px hsla(var(--shadow-color-light), 0.08);
-    --shadow-md: 0 4px 10px hsla(var(--shadow-color-light), 0.1);
-    --shadow-lg: 0 8px 20px hsla(var(--shadow-color-light), 0.15);
-    --shadow-xl: 0 15px 30px hsla(var(--shadow-color-light), 0.2);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark Mode Variables (Subtler Tones) */
+/* Dark Mode Variables */
 body.dark-mode {
-    --text-primary: #e2e8f0; /* Soft white */
-    --text-secondary: #94a3b8;
-    --bg-primary: #0e1423; /* Very dark blue-grey, not black */
-    --bg-secondary: #1a2033; /* Slightly lighter for contrast */
-    --bg-card: #1a2033;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #1e293b;
     --border-color: #334155;
-    
-    /* Dark mode shadows are lighter and less opaque on dark backgrounds */
-    --shadow-color-dark: 210 50% 10%;
-    --shadow-sm: 0 1px 3px hsla(var(--shadow-color-dark), 0.3);
-    --shadow-md: 0 4px 10px hsla(var(--shadow-color-dark), 0.4);
-    --shadow-lg: 0 8px 20px hsla(var(--shadow-color-dark), 0.5);
-    --shadow-xl: 0 15px 30px hsla(var(--shadow-color-dark), 0.6);
 }
 
 /* ========================================
-   Base Styles (Minimal Changes)
+   Base Styles
    ======================================== */
 * {
     margin: 0;
@@ -50,12 +40,11 @@ body.dark-mode {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Enhanced background gradient for subtle texture */
     background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
-    transition: all 0.5s ease; /* Slower transition for smoothness */
+    transition: all 0.3s ease;
 }
 
 /* ========================================
@@ -80,7 +69,7 @@ body {
 }
 
 .theme-toggle:hover {
-    transform: scale(1.1) rotate(5deg); /* Added subtle rotation */
+    transform: scale(1.1);
     box-shadow: var(--shadow-lg);
 }
 
@@ -107,8 +96,7 @@ body {
     padding: 2rem 1rem;
     background: var(--bg-card);
     border-radius: 12px;
-    /* Used a smaller shadow for the header */
-    box-shadow: var(--shadow-sm); 
+    box-shadow: var(--shadow-md);
 }
 
 .logo {
@@ -145,7 +133,7 @@ body {
 
 .progress-bar {
     width: 100%;
-    height: 10px; /* Slightly thicker */
+    height: 8px;
     background: var(--border-color);
     border-radius: 10px;
     overflow: hidden;
@@ -154,10 +142,8 @@ body {
 
 .progress-fill {
     height: 100%;
-    /* Subtle 3D-effect on the progress fill */
     background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); 
-    transition: width 0.6s ease;
+    transition: width 0.4s ease;
     border-radius: 10px;
 }
 
@@ -173,13 +159,11 @@ body {
    ======================================== */
 .form-card {
     background: var(--bg-card);
-    border-radius: 16px; /* Slightly more rounded corners */
+    border-radius: 12px;
     padding: 2.5rem;
-    /* Using the enhanced large shadow */
-    box-shadow: var(--shadow-lg); 
+    box-shadow: var(--shadow-lg);
     margin-bottom: 2rem;
     min-height: 500px;
-    border: 1px solid var(--border-color); /* Added subtle border for definition */
 }
 
 /* ========================================
@@ -210,8 +194,7 @@ body {
     color: var(--text-primary);
     margin-bottom: 1.5rem;
     padding-bottom: 1rem;
-    /* Separator is part of the box-shadow instead of a border */
-    border-bottom: 2px solid var(--border-color); 
+    border-bottom: 2px solid var(--border-color);
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -223,7 +206,7 @@ body {
 
 .subsection-title {
     font-size: 1.1rem;
-    color: var(--primary-color); /* Used primary color for hierarchy */
+    color: var(--text-primary);
     margin: 1.5rem 0 1rem;
     font-weight: 600;
 }
@@ -274,8 +257,7 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    /* Subtle inner shadow on focus for "pressed" effect */
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1), inset 0 1px 3px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .form-group textarea {
@@ -295,22 +277,15 @@ body {
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
-    padding: 0.75rem 1.25rem; /* Slightly larger padding */
+    padding: 0.5rem 1rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     transition: all 0.3s ease;
-    background: var(--bg-primary); /* Ensures background is clean */
 }
 
 .radio-label:hover {
     background: var(--bg-secondary);
     border-color: var(--primary-color);
-    box-shadow: var(--shadow-sm); /* Subtle lift on hover */
-}
-
-.radio-label input[type="radio"]:checked + span {
-    color: var(--primary-color);
-    font-weight: 600;
 }
 
 .radio-label input[type="radio"] {
@@ -329,13 +304,12 @@ body {
    File Upload
    ======================================== */
 .upload-note {
-    background: color-mix(in srgb, var(--bg-secondary), var(--primary-color) 5%); /* Mix in primary color for a hint of color */
+    background: var(--bg-secondary);
     padding: 1rem;
     border-radius: 8px;
     margin-bottom: 1.5rem;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    border-left: 3px solid var(--primary-color); /* Highlight with primary color */
 }
 
 .upload-note i {
@@ -395,7 +369,6 @@ body {
 .form-group.error input,
 .form-group.error textarea {
     border-color: var(--danger-color);
-    box-shadow: 0 0 0 1px var(--danger-color); /* Slight red glow on error */
 }
 
 /* ========================================
@@ -429,25 +402,19 @@ body {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 1.2rem;
-    border-bottom: 2px solid color-mix(in srgb, var(--border-color), var(--primary-color) 15%); /* Colored border for visual interest */
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 0.5rem;
 }
 
 .preview-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
     margin-bottom: 0.75rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px dashed var(--border-color); /* Dashed separator for minimalist look */
-}
-
-.preview-row:last-child {
-    border-bottom: none;
 }
 
 .preview-item {
-    margin-bottom: 0;
+    margin-bottom: 0.75rem;
 }
 
 .preview-label {
@@ -460,7 +427,6 @@ body {
 .preview-value {
     color: var(--text-primary);
     font-size: 1rem;
-    word-wrap: break-word; /* Ensure long content wraps */
 }
 
 /* ========================================
@@ -470,7 +436,7 @@ body {
     background: var(--bg-secondary);
     padding: 2rem;
     border-radius: 8px;
-    border-left: 5px solid var(--primary-color); /* Slightly thicker border */
+    border-left: 4px solid var(--primary-color);
     margin-bottom: 2rem;
 }
 
@@ -524,7 +490,6 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    box-shadow: var(--shadow-sm); /* Subtle shadow on all buttons */
 }
 
 .btn:hover {
@@ -536,17 +501,15 @@ body {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
-    box-shadow: var(--shadow-sm);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); /* Subtle gradient on primary button */
+    background: var(--primary-color);
     color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
     background: var(--primary-hover);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); /* Primary color glow on hover */
 }
 
 .btn-secondary {
@@ -567,7 +530,6 @@ body {
 
 .btn-success:hover:not(:disabled) {
     background: #15803d;
-    box-shadow: 0 4px 15px rgba(22, 163, 74, 0.4); /* Success color glow on hover */
 }
 
 /* ========================================
@@ -600,7 +562,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     display: none;
     justify-content: center;
     align-items: center;
@@ -616,7 +578,7 @@ body {
     width: 50px;
     height: 50px;
     border: 4px solid rgba(255, 255, 255, 0.3);
-    border-top-color: var(--primary-color); /* Spinner uses primary color */
+    border-top-color: white;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -651,17 +613,15 @@ body {
 
     .form-card {
         padding: 1.5rem;
-        border-radius: 12px;
     }
 
     .form-row {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
+
     .preview-row {
         grid-template-columns: 1fr;
-        gap: 0.5rem;
     }
 
     .step-title {
